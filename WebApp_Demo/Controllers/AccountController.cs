@@ -1,9 +1,6 @@
-﻿using DotNetOpenAuth.GoogleOAuth2;
+using DotNetOpenAuth.GoogleOAuth2;
 using Microsoft.AspNet.Membership.OpenAuth;
-using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -13,11 +10,6 @@ namespace WebApp_Demo.Controllers
 
     public class AccountController : Controller
     {
-        // GET: Account
-        public ActionResult Index()
-        {
-            return View();
-        }
         public ActionResult Login()
         {
             return View();
@@ -60,7 +52,6 @@ namespace WebApp_Demo.Controllers
             GoogleOAuth2Client.RewriteRequest();
 
             var redirectUrl = Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl });
-            var retUrl = returnUrl;
             var authResult = OpenAuth.VerifyAuthentication(redirectUrl);
 
             if (!authResult.IsSuccessful)
