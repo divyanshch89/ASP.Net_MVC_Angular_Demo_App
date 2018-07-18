@@ -1,0 +1,29 @@
+USE [DB_A3E8C2_Demo]
+GO
+
+/****** Object:  StoredProcedure [dbo].[StoreServerResponse]    Script Date: 7/18/2018 3:25:47 PM ******/
+DROP PROCEDURE [dbo].[StoreServerResponse]
+GO
+
+/****** Object:  StoredProcedure [dbo].[StoreServerResponse]    Script Date: 7/18/2018 3:25:47 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Divyansh Chaudhary
+-- Create date: 07/18/2018
+-- Description:	Stores the server respone in the ResponseLog Table
+-- =============================================
+CREATE PROCEDURE [dbo].[StoreServerResponse] (@ServerResponse varchar(50))
+AS
+BEGIN
+    -- Insert statements for procedure here
+	INSERT INTO [dbo].[ResponseLog] (ServerRespone, CreatedAt)
+	VALUES (@ServerResponse, CURRENT_TIMESTAMP)
+END
+GO
+
+
