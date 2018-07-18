@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+<h3>Welcome!</h3>
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <text> @string.Format("{0}, {1}", WebApp_Demo.Utilities.Utility.GetGreeting(), User.Identity.Name)</text>
+    }
+</p>
+<p><my-app>Loading AppComponent content here ...</my-app></p>

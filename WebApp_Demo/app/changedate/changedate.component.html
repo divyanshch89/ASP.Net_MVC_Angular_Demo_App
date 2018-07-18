@@ -1,0 +1,9 @@
+﻿<div>
+    <button class="btn btn-default" (click)="GetCurrentTime()">Get Time</button>
+</div>
+<div *ngIf="currTime">
+    <p>The current time is: <b>{{currTime}}</b> and is fetched from a ExpressJS powered server</p>
+</div>
+<div *ngIf="postDataStatus">
+    <p>{{postDataStatus}}</p>
+</div>
